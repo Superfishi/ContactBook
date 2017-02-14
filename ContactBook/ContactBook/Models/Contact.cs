@@ -36,7 +36,7 @@ namespace ContactBook.Models
                 OnPropertyChanged(nameof(FullName));
 
             }
-        }
+        } 
 
         private string _lastName;
 
