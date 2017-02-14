@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ContactBook.ContactDetailsPage">
+
+    <TableView Intent="Form">
+        <TableRoot>
+            <TableSection Title="NAME">
+                <EntryCell x:Name="firstName" Placeholder="First Name" Text="{Binding FirstName}"/>
+                <EntryCell x:Name="lastName" Placeholder="Last Name" Text="{Binding LastName}"/>
+            </TableSection>
+            <TableSection Title="CONTACT">
+                <EntryCell Placeholder="Phone" Text="{Binding Phone}" Keyboard="Numeric" />
+                <EntryCell Placeholder="Email" Text="{Binding Email}"  Keyboard="Email"/>
+            </TableSection>
+            <TableSection Title="OTHER">
+
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal" Padding="13, 0">
+                        <Label Text="Blocked" VerticalOptions="Center" />
+                        <Switch HorizontalOptions="EndAndExpand" IsToggled="{Binding IsBlocked}" />
+                    </StackLayout>                    
+                </ViewCell>                
+            </TableSection>
+            <TableSection>
+                <ViewCell>
+                    <StackLayout HorizontalOptions="Center">
+                        <Button Text="Save" Clicked="OnSave" />
+                    </StackLayout>
+                </ViewCell>
+            </TableSection>
+        </TableRoot>
+    </TableView>
+</ContentPage>
